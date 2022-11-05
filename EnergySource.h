@@ -7,6 +7,9 @@ using namespace std;
 class EnergySource {
     public:
         EnergySource(int year, double value = 0, int order = 0);
+        int year() const;
+        double value() const;
+        string type() const;
 
 
     private:
@@ -14,7 +17,6 @@ class EnergySource {
         double _value;
         int _order;
         string _type;
-        vector<string> names;
     
 };
 
