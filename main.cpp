@@ -2,10 +2,15 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "EnergySource.h"
 
 using namespace std;
 
 int main(int argc, char* argv[]){
+    // vector <string> names {"Coal Production", "Natural Gas (Dry)", "Crude Oil Production", "Natural Gas (Liquid)", "Total Fossil Fuel Production"
+    //     , "Nuclear Electric Power Production", "Hydroelectric Power Production", "Geothermal Energy Production", "Solar Energy Production"
+    //     , "Wind Energy Production", "Biomass Energy Production", "Total Renewable Energy Production", "Total Primary Energy Production"};
+
     ifstream inFS;
     string filename = argv[1];
 
@@ -15,21 +20,28 @@ int main(int argc, char* argv[]){
         exit(1);
     }
 
-    string line, name, units;
+    string line, name;
     char comma;
     int year, column;
     double eValue;
-    
+    vector <EnergySource> energylist;
 
+    getline(inFS, line);
     while(inFS.ignore(8,',')){
-        inFS >> year;
-        inFS.get(comma);
-        inFS >> eValue;
-        inFS.get(comma);
+        inFS >> year; inFS.get(comma); 
+        inFS >> eValue; inFS.get(comma); 
         inFS >> column;
         getline(inFS,line);
+
+        EnergySource e(year, eValue, column);
+        energylist.push_back(e);
     }
 
-    cout << fixed << setprecision(3) << year << " " << eValue << " " << column << " " << endl;
+    for(unsigned int i = 0; i < energylist.size(); i++){
+        cout << fixed << setprecision(3) << energylist.at(i);
+    }
+
+   
+
     return 0; 
 }
