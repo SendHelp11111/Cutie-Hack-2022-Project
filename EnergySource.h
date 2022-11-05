@@ -22,7 +22,6 @@ class EnergySource {
         double _value;
         int _order;
         string _type;
-        vector<string> names;
     
 };
 
