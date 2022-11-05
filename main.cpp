@@ -11,7 +11,10 @@ int main(int argc, char* argv[]){
     // vector <string> names {"Coal Production", "Natural Gas (Dry)", "Crude Oil Production", "Natural Gas (Liquid)", "Total Fossil Fuel Production"
     //     , "Nuclear Electric Power Production", "Hydroelectric Power Production", "Geothermal Energy Production", "Solar Energy Production"
     //     , "Wind Energy Production", "Biomass Energy Production", "Total Renewable Energy Production", "Total Primary Energy Production"};
-
+    if (argc < 2) {
+        cout << "Usage: myprog.exe csvfile";
+        return 1;
+    }
     ifstream inFS;
     string filename = argv[1];
 
