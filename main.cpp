@@ -35,14 +35,13 @@ int main(int argc, char* argv[]){
         getline(inFS,line);
 
         EnergySource e(year, eValue, column);
-        energylist.push_back(e);
+        current.add(e);
+    }
+    inFS.close();
+
+    for(unsigned int i = 0; i < current.getArr().size(); i++){
+         cout << fixed << setprecision(3) << current.getArr().at(i);
     }
 
-    for(unsigned int i = 0; i < energylist.size(); i++){
-        cout << fixed << setprecision(3) << energylist.at(i);
-    }
-
-    current.print();
-    cout << fixed << setprecision(3) << year << " " << eValue << " " << column << " " << endl;
     return 0; 
 }

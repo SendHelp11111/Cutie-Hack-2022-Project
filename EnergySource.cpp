@@ -39,8 +39,3 @@ ostream& operator<<(ostream& out, EnergySource& rhs){
     out << "Year: " << rhs._year << " Energy Value: " << rhs._value << " Column: " << rhs._order << endl;
     return out;
 }
-
-int EnergySource::year() const {return _year;}
-double EnergySource::value() const {return _value;}
-string EnergySource::type() const {return _type;}
-
