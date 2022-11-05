@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -31,5 +32,4 @@ int main(int argc, char* argv[]){
 
     cout << fixed << setprecision(3) << year << " " << eValue << " " << column << " " << endl;
     return 0; 
-
 }
