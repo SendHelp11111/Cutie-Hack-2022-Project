@@ -50,20 +50,11 @@ int main(int argc, char* argv[]){
          cout << fixed << setprecision(3) << current.getArr().at(i);
     }
 
-    // ****REMOVE THESE LATER, TEST VECTORS FOR PRINTING OUT A GRAPH
-    
-    vector<double> x;
-    for(int i = 0; i < 10; ++i) {
-        x.push_back(i*2.5);
-    }
-    vector<double> y;
-    for(int i = 0; i < 10; ++i) {
-        y.push_back(i*3.7);
-    }
-    display(x, y, "test.png", "Energy Production over Time");
     return 0; 
 }
 
+
+//Display creates a new file "pngName" that stores a graph with the x values (&years) and y values (&energyProduction) plotted with the title "plotTitle"
 void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle) {
     bool success;
     StringReference *errorMessage;
