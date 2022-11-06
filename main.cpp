@@ -29,22 +29,56 @@ int main(int argc, char* argv[]){
     int year, column;
     double eValue;
     TotalEnergy current;
-    getline(inFS, line);    
+    TotalEnergy coal, naturalGasDry, crudeOil, naturalGasPlant, fossilFuels, nuclearElectric, hydroElectric, geothermal, solar, wind, biomass;
+    
 
-    while(inFS.ignore(8,',')){
-        inFS >> year; inFS.get(comma); 
-        inFS >> eValue; inFS.get(comma); 
+    getline(inFS, line); 
+    while(inFS.ignore(256,',')){
+        inFS >> year; inFS.ignore();
+        if(inFS.peek() == 'N'){
+            inFS.ignore(256,',');
+            eValue = 0;
+        } else {
+            inFS >> eValue;
+            inFS.ignore();
+        }
         inFS >> column;
-        getline(inFS,line);
-
+        getline(inFS, line);
+        
         EnergySource e(year, eValue, column);
-        current.add(e);
+        
+        if(column == 1){
+            coal.add(e);
+        } else if (column == 2){
+            naturalGasDry.add(e);
+        } else if (column == 3){
+            crudeOil.add(e);
+        } else if (column == 4){
+            naturalGasPlant.add(e);
+        } else if (column == 5){
+            fossilFuels.add(e);
+        } else if (column == 6){
+            nuclearElectric.add(e);
+        } else if (column == 7){
+            hydroElectric.add(e);
+        } else if (column == 8){
+            geothermal.add(e);
+        } else if (column == 9){
+            solar.add(e);
+        } else if (column == 10){
+            wind.add(e);
+        } else if (column == 11){
+            biomass.add(e);
+        } 
+
     }
+
+    geothermal.print();
+
+
     inFS.close();
 
-    for(unsigned int i = 0; i < current.getArr().size(); i++){
-         cout << fixed << setprecision(3) << current.getArr().at(i);
-    }
+    
 
     return 0; 
 }

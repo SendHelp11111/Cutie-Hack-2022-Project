@@ -19,7 +19,7 @@ void TotalEnergy::add(EnergySource n) {
 
 void TotalEnergy::print() {
     for(unsigned int i = 0; i < arr.size(); ++i) {
-        cout << arr.at(i) << endl;
+        cout << fixed << setprecision(3) << arr.at(i) << endl;
     }
 }
 
