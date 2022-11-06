@@ -42,19 +42,10 @@ int main(int argc, char* argv[]){
     }
 
     inFS.close();
-    
-    //current.print();
-    //current.yInt(2010);
-    //cout << fixed << setprecision(3) << current.getYInt() << endl;
 
-    current.regression(2010);
-    cout << fixed << setprecision(3) << current.getReg() << endl;
-    current.yInt(2010);
-    cout << fixed << setprecision(3) << current.getYInt() << endl;
-
-    // for(unsigned int i = 0; i < current.getArr().size(); i++){
-    //      cout << fixed << setprecision(3) << current.getArr().at(i);
-    // }
+    for(unsigned int i = 0; i < current.getArr().size(); i++){
+         cout << fixed << setprecision(3) << current.getArr().at(i);
+    }
 
     return 0; 
 }
