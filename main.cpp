@@ -104,7 +104,7 @@ void display(vector<double> &years, vector<double> &energyProduction, string png
     settings->title = toVector(wplotTitle.c_str());
     settings->width = 900;
     settings->height = 600;
-    settings->xLabel = toVector(L"Years");
+    settings->xLabel = toVector(L"Year");
     settings->yLabel = toVector(L"Energy Production");
     settings->scatterPlotSeries->push_back(series);
 
