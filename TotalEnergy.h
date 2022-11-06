@@ -8,18 +8,32 @@ using namespace std;
 class TotalEnergy {
     public:
         TotalEnergy();
+        TotalEnergy(int year);
         vector<EnergySource> getArr();
         void add(EnergySource n);
         void print();
-        double sumValCol(int col);
-        double sumPerYear(int year);
-        vector <double> vectorYears();
-        vector <double> vectorValue();
+        int sumYear(int year);
+        double sumValue(int year);
+        vector<double> vectorYears();
+        vector<double> vectorValue();
+        int totalYearsAfter(int year);
+        int avgYear(int year);
+        double avgValue(int year);
+        int sumYearFromAvg(int year);
+        double sumValueFromAvg(int year);
+        void regression(int year);
+        double getReg();
+        void yInt(int year);
+        double getYInt();
+        void removeZero();
+
 
 
     private:
         vector<EnergySource> arr;
-        
+        int _year;
+        double _regression;
+        double _yInt;
 };
 
 

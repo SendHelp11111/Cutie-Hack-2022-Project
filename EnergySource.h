@@ -10,7 +10,7 @@ class EnergySource {
         EnergySource();
         EnergySource(int year, double value = 0, int order = 0);
         int getYear() const;
-        int getValue() const;
+        double getValue() const;
         int getOrder() const;
         void setYear(int year);
         void setValue(double value);

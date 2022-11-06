@@ -12,9 +12,6 @@ using namespace std;
 void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle);
 
 int main(int argc, char* argv[]){
-    // vector <string> names {"Coal Production", "Natural Gas (Dry)", "Crude Oil Production", "Natural Gas (Liquid)", "Total Fossil Fuel Production"
-    //     , "Nuclear Electric Power Production", "Hydroelectric Power Production", "Geothermal Energy Production", "Solar Energy Production"
-    //     , "Wind Energy Production", "Biomass Energy Production", "Total Renewable Energy Production", "Total Primary Energy Production"};
     if (argc < 2) {
         cout << "Usage: myprog.exe csvfile";
         return 1;
@@ -82,15 +79,64 @@ int main(int argc, char* argv[]){
     inFS.close();
 
     string inputName;
-    cout << "Energy Options: Coal Production, Natural Gas (Dry), Crude Oil Production, Natural Gas (Liquid), Total Fossil Fuel Production
-       , Nuclear Electric Power Production, Hydroelectric Power Production, Geothermal Energy Production, Solar Energy Production
-       , Wind Energy Production, Biomass Energy Production, Total Renewable Energy Production, Total Primary Energy Production" << endl;
-    cout << "Choose an Energy Option: "; cin >> inputName; cout << endl;
+    string png;
+    string title;
+    cout << "Energy Options: Coal, Natural Gas (Dry), Crude Oil, Natural Gas (Liquid), Fossil Fuel, Nuclear Electric Power, Hydroelectric Power, Geothermal Energy, Solar Energy, Wind Energy, Biomass Energy" << endl;
+    cout << "Choose an Energy Option (Exactly as written above): "; 
+    getline(cin,inputName);
+    cout << endl;
 
+    png = inputName+"_Production.png";
+    title = "Predictions for "+inputName+" energy values in x years";
+
+    if(inputName == "Coal"){
+        vector<double> yearValues = coal.vectorYears();
+        vector<double> productionValues = coal.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Natural Gas (Dry)"){
+        vector<double> yearValues = naturalGasDry.vectorYears();
+        vector<double> productionValues = naturalGasDry.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Crude Oil"){
+        vector<double> yearValues = crudeOil.vectorYears();
+        vector<double> productionValues = crudeOil.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Natural Gas (Liquid)"){
+        vector<double> yearValues = naturalGasPlant.vectorYears();
+        vector<double> productionValues = naturalGasPlant.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Fossil Fuel"){
+        vector<double> yearValues = fossilFuels.vectorYears();
+        vector<double> productionValues = fossilFuels.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Nuclear Electric Power"){
+        vector<double> yearValues = nuclearElectric.vectorYears();
+        vector<double> productionValues = nuclearElectric.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Hydroelectric Power"){
+        vector<double> yearValues = hydroElectric.vectorYears();
+        vector<double> productionValues = hydroElectric.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Geothermal Energy"){
+        vector<double> yearValues = geothermal.vectorYears();
+        vector<double> productionValues = geothermal.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Solar Energy"){
+        vector<double> yearValues = solar.vectorYears();
+        vector<double> productionValues = solar.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Wind Energy"){
+        vector<double> yearValues = wind.vectorYears();
+        vector<double> productionValues = wind.vectorValue();
+          display(yearValues, productionValues, png, title);
+    } else if (inputName == "Biomass Energy"){
+        vector<double> yearValues = biomass.vectorYears();
+        vector<double> productionValues = biomass.vectorValue();
+          display(yearValues, productionValues, png, title);
+    }
     
-    vector<double> yearValues = wind.vectorYears();
-    vector<double> productionValues = wind.vectorValue();
-    display(yearValues, productionValues, "CoalProduction.png", "Predictions for coal production energy values in 2050");
+
+
 
     
     

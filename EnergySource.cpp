@@ -19,7 +19,7 @@ EnergySource::EnergySource(int year, double value, int order) {
 int EnergySource::getYear() const{
     return _year;
 }
-int EnergySource::getValue() const{
+double EnergySource::getValue() const{
     return _value;
 }
 int EnergySource::getOrder() const{
