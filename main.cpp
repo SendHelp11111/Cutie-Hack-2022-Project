@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void display(vector<double> &years, vector<double> &energyProduction);
+void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle);
 
 int main(int argc, char* argv[]){
     // vector <string> names {"Coal Production", "Natural Gas (Dry)", "Crude Oil Production", "Natural Gas (Liquid)", "Total Fossil Fuel Production"
@@ -49,6 +49,9 @@ int main(int argc, char* argv[]){
     for(unsigned int i = 0; i < current.getArr().size(); i++){
          cout << fixed << setprecision(3) << current.getArr().at(i);
     }
+
+    // ****REMOVE THESE LATER, TEST VECTORS FOR PRINTING OUT A GRAPH
+    
     vector<double> x;
     for(int i = 0; i < 10; ++i) {
         x.push_back(i*2.5);
@@ -57,14 +60,15 @@ int main(int argc, char* argv[]){
     for(int i = 0; i < 10; ++i) {
         y.push_back(i*3.7);
     }
-    display(x, y);
+    display(x, y, "test.png", "Energy Production over Time");
     return 0; 
 }
 
-void display(vector<double> &years, vector<double> &energyProduction) {
+void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle) {
     bool success;
     StringReference *errorMessage;
     RGBABitmapImageReference *imageRef = CreateRGBABitmapImageReference();
+    wstring wplotTitle = wstring(plotTitle.begin(), plotTitle.end());
 
     ScatterPlotSeries *series = GetDefaultScatterPlotSeriesSettings();
     series->xs = &years;
@@ -72,10 +76,10 @@ void display(vector<double> &years, vector<double> &energyProduction) {
     series->color = CreateRGBColor(0,0,1);
 
     ScatterPlotSettings *settings = GetDefaultScatterPlotSettings();
-    settings->title = toVector(L"test");
+    settings->title = toVector(wplotTitle.c_str());
     settings->width = 900;
     settings->height = 600;
-    settings->xLabel = toVector(L"Year");
+    settings->xLabel = toVector(L"Years");
     settings->yLabel = toVector(L"Energy Production");
     settings->scatterPlotSeries->push_back(series);
 
@@ -83,7 +87,7 @@ void display(vector<double> &years, vector<double> &energyProduction) {
 
     if (success) {
         vector<double> *pngdata = ConvertToPNG(imageRef->image);
-        WriteToFile(pngdata, "test.png");
+        WriteToFile(pngdata, pngName);
         DeleteImage(imageRef->image);
     } else {
         cout << "Error drawing plot";
