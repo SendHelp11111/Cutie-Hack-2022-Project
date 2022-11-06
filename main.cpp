@@ -4,8 +4,12 @@
 #include <vector>
 #include "EnergySource.h"
 #include "TotalEnergy.h"
+#include "pbPlots.hpp"
+#include "supportLib.hpp"
 
 using namespace std;
+
+void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle);
 
 int main(int argc, char* argv[]){
     // vector <string> names {"Coal Production", "Natural Gas (Dry)", "Crude Oil Production", "Natural Gas (Liquid)", "Total Fossil Fuel Production"
@@ -81,4 +85,36 @@ int main(int argc, char* argv[]){
     
 
     return 0; 
+}
+
+
+//Display creates a new file "pngName" that stores a graph with the x values (&years) and y values (&energyProduction) plotted with the title "plotTitle"
+void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle) {
+    bool success;
+    StringReference *errorMessage;
+    RGBABitmapImageReference *imageRef = CreateRGBABitmapImageReference();
+    wstring wplotTitle = wstring(plotTitle.begin(), plotTitle.end());
+
+    ScatterPlotSeries *series = GetDefaultScatterPlotSeriesSettings();
+    series->xs = &years;
+    series->ys = &energyProduction;
+    series->color = CreateRGBColor(0,0,1);
+
+    ScatterPlotSettings *settings = GetDefaultScatterPlotSettings();
+    settings->title = toVector(wplotTitle.c_str());
+    settings->width = 900;
+    settings->height = 600;
+    settings->xLabel = toVector(L"Years");
+    settings->yLabel = toVector(L"Energy Production");
+    settings->scatterPlotSeries->push_back(series);
+
+    success = DrawScatterPlotFromSettings(imageRef, settings, errorMessage);
+
+    if (success) {
+        vector<double> *pngdata = ConvertToPNG(imageRef->image);
+        WriteToFile(pngdata, pngName);
+        DeleteImage(imageRef->image);
+    } else {
+        cout << "Error drawing plot";
+    }
 }
