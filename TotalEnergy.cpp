@@ -43,3 +43,18 @@ double TotalEnergy::sumPerYear(int year) {
     return sum;    
 }
 
+vector <double> TotalEnergy::vectorYears(){
+    vector<double> temp;
+    for(unsigned int i = 0; i < arr.size(); i++){
+        temp.push_back(arr.at(i).getYear());
+    }
+    return temp;
+}
+vector <double> TotalEnergy::vectorValue(){
+    vector<double> temp;
+    for(unsigned int i = 0; i < arr.size(); i++){
+        temp.push_back(arr.at(i).getValue());
+    }
+    return temp;
+}
+
