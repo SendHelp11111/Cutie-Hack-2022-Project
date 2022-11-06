@@ -77,10 +77,9 @@ int main(int argc, char* argv[]){
 
     }
 
-    geothermal.print();
-
-
     inFS.close();
+
+    display(coal.vectorYears(), coal.vectorValue(), "Coal Production", "Predictions for coal production energy values in 2050");
 
     
 

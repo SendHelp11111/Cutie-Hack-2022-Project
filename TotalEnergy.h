@@ -13,6 +13,8 @@ class TotalEnergy {
         void print();
         double sumValCol(int col);
         double sumPerYear(int year);
+        vector <double> vectorYears();
+        vector <double> vectorValue();
 
 
     private:
