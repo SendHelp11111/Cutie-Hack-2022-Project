@@ -20,7 +20,8 @@ int main(int argc, char* argv[]){
         return 1;
     }
     ifstream inFS;
-    string filename = argv[1];
+    string filename = argv[1]; //File must be in this format: MSN,YYYYMM,Value,Column_Order,Description,Unit
+
 
     inFS.open(filename);
     if(!inFS.is_open()){
@@ -79,10 +80,18 @@ int main(int argc, char* argv[]){
 
     inFS.close();
 
-    vector<double> yearValues = coal.vectorYears();
-    vector<double> productionValues = coal.vectorValue();
+    string inputName;
+    cout << "Energy Options: Coal Production, Natural Gas (Dry), Crude Oil Production, Natural Gas (Liquid), Total Fossil Fuel Production
+       , Nuclear Electric Power Production, Hydroelectric Power Production, Geothermal Energy Production, Solar Energy Production
+       , Wind Energy Production, Biomass Energy Production, Total Renewable Energy Production, Total Primary Energy Production" << endl;
+    cout << "Choose an Energy Option: "; cin >> inputName; cout << endl;
+
+    
+    vector<double> yearValues = wind.vectorYears();
+    vector<double> productionValues = wind.vectorValue();
     display(yearValues, productionValues, "CoalProduction.png", "Predictions for coal production energy values in 2050");
 
+    
     
 
     return 0; 
