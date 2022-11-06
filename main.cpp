@@ -45,7 +45,9 @@ int main(int argc, char* argv[]){
         inFS >> column;
         getline(inFS, line);
         
-        EnergySource e(year, eValue, column);
+        if(eValue != 0){
+            EnergySource e(year, eValue, column);
+        }
         
         if(column == 1){
             coal.add(e);
