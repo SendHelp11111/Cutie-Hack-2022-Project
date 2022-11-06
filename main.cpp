@@ -79,7 +79,9 @@ int main(int argc, char* argv[]){
 
     inFS.close();
 
-    display(coal.vectorYears(), coal.vectorValue(), "Coal Production", "Predictions for coal production energy values in 2050");
+    vector<double> yearValues = coal.vectorYears();
+    vector<double> productionValues = coal.vectorValue();
+    display(yearValues, productionValues, "CoalProduction.png", "Predictions for coal production energy values in 2050");
 
     
 
@@ -87,7 +89,7 @@ int main(int argc, char* argv[]){
 }
 
 
-//Display creates a new file "pngName" that stores a graph with the x values (&years) and y values (&energyProduction) plotted with the title "plotTitle"
+//Display creates a new file "pngName" ***MUST HAVE .png FILETYPE*** that stores a graph with the x values (&years) and y values (&energyProduction) plotted with the title "plotTitle"
 void display(vector<double> &years, vector<double> &energyProduction, string pngName, string plotTitle) {
     bool success;
     StringReference *errorMessage;
@@ -98,11 +100,12 @@ void display(vector<double> &years, vector<double> &energyProduction, string png
     series->xs = &years;
     series->ys = &energyProduction;
     series->color = CreateRGBColor(0,0,1);
+    series->linearInterpolation = true;
 
     ScatterPlotSettings *settings = GetDefaultScatterPlotSettings();
     settings->title = toVector(wplotTitle.c_str());
-    settings->width = 900;
-    settings->height = 600;
+    settings->width = 1200;
+    settings->height = 800;
     settings->xLabel = toVector(L"Year");
     settings->yLabel = toVector(L"Energy Production");
     settings->scatterPlotSeries->push_back(series);
