@@ -1,72 +1,21 @@
-MSN,YYYYMM,Value,Column_Order,Description,Unit
-CLPRBUS,194913,11.973882,1,Coal Production,Quadrillion Btu
-CLPRBUS,195013,14.060135,1,Coal Production,Quadrillion Btu
-CLPRBUS,195113,14.419325,1,Coal Production,Quadrillion Btu
-CLPRBUS,195213,12.734313,1,Coal Production,Quadrillion Btu
-CLPRBUS,195313,12.277746,1,Coal Production,Quadrillion Btu
-CLPRBUS,195413,10.542448,1,Coal Production,Quadrillion Btu
-CLPRBUS,195513,12.369608,1,Coal Production,Quadrillion Btu
-CLPRBUS,195613,13.306334,1,Coal Production,Quadrillion Btu
-CLPRBUS,195713,13.061393,1,Coal Production,Quadrillion Btu
-CLPRBUS,195813,10.783088,1,Coal Production,Quadrillion Btu
-CLPRBUS,195913,10.777984,1,Coal Production,Quadrillion Btu
-CLPRBUS,196013,10.817398,1,Coal Production,Quadrillion Btu
-CLPRBUS,196113,10.447091,1,Coal Production,Quadrillion Btu
-CLPRBUS,196213,10.90056,1,Coal Production,Quadrillion Btu
-CLPRBUS,196313,11.849229,1,Coal Production,Quadrillion Btu
-CLPRBUS,196413,12.523881,1,Coal Production,Quadrillion Btu
-CLPRBUS,196513,13.055285,1,Coal Production,Quadrillion Btu
-CLPRBUS,196613,13.467679,1,Coal Production,Quadrillion Btu
-CLPRBUS,196713,13.825487,1,Coal Production,Quadrillion Btu
-CLPRBUS,196813,13.608678,1,Coal Production,Quadrillion Btu
-CLPRBUS,196913,13.863346,1,Coal Production,Quadrillion Btu
-CLPRBUS,197013,14.607064,1,Coal Production,Quadrillion Btu
-CLPRBUS,197113,13.185523,1,Coal Production,Quadrillion Btu
-CLPRBUS,197213,14.091685,1,Coal Production,Quadrillion Btu
-CLPRBUS,197301,1.166486,1,Coal Production,Quadrillion Btu
-CLPRBUS,197302,1.086072,1,Coal Production,Quadrillion Btu
-CLPRBUS,197303,1.196571,1,Coal Production,Quadrillion Btu
-CLPRBUS,197304,1.11223,1,Coal Production,Quadrillion Btu
-CLPRBUS,197305,1.216978,1,Coal Production,Quadrillion Btu
-CLPRBUS,197306,1.103861,1,Coal Production,Quadrillion Btu
-CLPRBUS,197307,1.034037,1,Coal Production,Quadrillion Btu
-CLPRBUS,197308,1.319832,1,Coal Production,Quadrillion Btu
-CLPRBUS,197309,1.142385,1,Coal Production,Quadrillion Btu
-CLPRBUS,197310,1.285586,1,Coal Production,Quadrillion Btu
-CLPRBUS,197311,1.178337,1,Coal Production,Quadrillion Btu
-CLPRBUS,197312,1.149749,1,Coal Production,Quadrillion Btu
-CLPRBUS,197313,13.992126,1,Coal Production,Quadrillion Btu
-CLPRBUS,197401,1.251148,1,Coal Production,Quadrillion Btu
-CLPRBUS,197402,1.16539,1,Coal Production,Quadrillion Btu
-CLPRBUS,197403,1.195337,1,Coal Production,Quadrillion Btu
-CLPRBUS,197404,1.268152,1,Coal Production,Quadrillion Btu
-CLPRBUS,197405,1.343967,1,Coal Production,Quadrillion Btu
-CLPRBUS,197406,1.120607,1,Coal Production,Quadrillion Btu
-CLPRBUS,197407,1.149793,1,Coal Production,Quadrillion Btu
-CLPRBUS,197408,1.209619,1,Coal Production,Quadrillion Btu
-CLPRBUS,197409,1.227477,1,Coal Production,Quadrillion Btu
-CLPRBUS,197410,1.41053,1,Coal Production,Quadrillion Btu
-CLPRBUS,197411,0.791646,1,Coal Production,Quadrillion Btu
-CLPRBUS,197412,0.940784,1,Coal Production,Quadrillion Btu
-CLPRBUS,197413,14.074451,1,Coal Production,Quadrillion Btu
-CLPRBUS,197501,1.275523,1,Coal Production,Quadrillion Btu
-CLPRBUS,197502,1.198498,1,Coal Production,Quadrillion Btu
-CLPRBUS,197503,1.216907,1,Coal Production,Quadrillion Btu
-CLPRBUS,197504,1.237491,1,Coal Production,Quadrillion Btu
-CLPRBUS,197505,1.292673,1,Coal Production,Quadrillion Btu
-CLPRBUS,197506,1.298947,1,Coal Production,Quadrillion Btu
-CLPRBUS,197507,1.062764,1,Coal Production,Quadrillion Btu
-CLPRBUS,197508,1.197399,1,Coal Production,Quadrillion Btu
-CLPRBUS,197509,1.295192,1,Coal Production,Quadrillion Btu
-CLPRBUS,197510,1.39571,1,Coal Production,Quadrillion Btu
-CLPRBUS,197511,1.248596,1,Coal Production,Quadrillion Btu
-CLPRBUS,197512,1.269616,1,Coal Production,Quadrillion Btu
-CLPRBUS,197513,14.989315,1,Coal Production,Quadrillion Btu
-CLPRBUS,197601,1.213441,1,Coal Production,Quadrillion Btu
-CLPRBUS,197602,1.239038,1,Coal Production,Quadrillion Btu
-CLPRBUS,197603,1.40428,1,Coal Production,Quadrillion Btu
-CLPRBUS,197604,1.363644,1,Coal Production,Quadrillion Btu
-CLPRBUS,197605,1.336766,1,Coal Production,Quadrillion Btu
-CLPRBUS,197606,1.377928,1,Coal Production,Quadrillion Btu
-CLPRBUS,197607,1.024087,1,Coal Production,Quadrillion Btu
-CLPRBUS,197608,1.239015,1,Coal Production,Quadrillion Btu
+FFPRBUS,201101,4.977779,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201102,4.498148,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201103,5.160762,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201104,4.906942,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201105,4.996022,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201106,4.913867,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201107,4.937955,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201108,5.205101,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201109,5.051033,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201110,5.299419,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201111,5.235448,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201112,5.347022,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201113,60.529497,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201201,5.406309,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201202,4.97344,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201203,5.210542,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201204,4.920631,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201205,5.138538,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201206,4.993785,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201207,5.277106,5,Total Fossil Fuels Production,Quadrillion Btu
+FFPRBUS,201208,5.347837,5,Total Fossil Fuels Production,Quadrillion Btu
