@@ -50,30 +50,31 @@ int main(int argc, char* argv[]){
         getline(inFS, line);
         
         EnergySource e(year, eValue, column);
-        
-        if(column == 1){
-            coal.add(e);
-        } else if (column == 2){
-            naturalGasDry.add(e);
-        } else if (column == 3){
-            crudeOil.add(e);
-        } else if (column == 4){
-            naturalGasPlant.add(e);
-        } else if (column == 5){
-            fossilFuels.add(e);
-        } else if (column == 6){
-            nuclearElectric.add(e);
-        } else if (column == 7){
-            hydroElectric.add(e);
-        } else if (column == 8){
-            geothermal.add(e);
-        } else if (column == 9){
-            solar.add(e);
-        } else if (column == 10){
-            wind.add(e);
-        } else if (column == 11){
-            biomass.add(e);
-        } 
+        if (year % 100 == 13) {
+            if(column == 1){
+                coal.add(e);
+            } else if (column == 2){
+                naturalGasDry.add(e);
+            } else if (column == 3){
+                crudeOil.add(e);
+            } else if (column == 4){
+                naturalGasPlant.add(e);
+            } else if (column == 5){
+                fossilFuels.add(e);
+            } else if (column == 6){
+                nuclearElectric.add(e);
+            } else if (column == 7){
+                hydroElectric.add(e);
+            } else if (column == 8){
+                geothermal.add(e);
+            } else if (column == 9){
+                solar.add(e);
+            } else if (column == 10){
+                wind.add(e);
+            } else if (column == 11){
+                biomass.add(e);
+            } 
+        }
 
     }
 
@@ -100,14 +101,16 @@ void display(vector<double> &years, vector<double> &energyProduction, string png
     series->xs = &years;
     series->ys = &energyProduction;
     series->color = CreateRGBColor(0,0,1);
-    series->linearInterpolation = true;
+    series->linearInterpolation = false;
+    series->pointType = toVector(L"dots");
+
 
     ScatterPlotSettings *settings = GetDefaultScatterPlotSettings();
     settings->title = toVector(wplotTitle.c_str());
     settings->width = 1200;
     settings->height = 800;
     settings->xLabel = toVector(L"Year");
-    settings->yLabel = toVector(L"Energy Production");
+    settings->yLabel = toVector(L"Energy Production per Year");
     settings->scatterPlotSeries->push_back(series);
 
     success = DrawScatterPlotFromSettings(imageRef, settings, errorMessage);
