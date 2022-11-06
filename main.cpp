@@ -45,9 +45,7 @@ int main(int argc, char* argv[]){
         inFS >> column;
         getline(inFS, line);
         
-        if(eValue != 0){
-            EnergySource e(year, eValue, column);
-        }
+        EnergySource e(year, eValue, column);
         
         if(column == 1){
             coal.add(e);
@@ -74,6 +72,8 @@ int main(int argc, char* argv[]){
         } 
 
     }
+
+    geothermal.print();
 
 
     inFS.close();
